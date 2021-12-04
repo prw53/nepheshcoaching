@@ -35,6 +35,18 @@ function Home() {
                   </Button>
                 </Grid>
               </Grid>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Button variant="contained" color="secondary">
+                    See my Photos
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="secondary">
+                    Secondary Action
+                  </Button>
+                </Grid>
+              </Grid>
             </div>
 
           </Container>
