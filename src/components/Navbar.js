@@ -1,33 +1,3 @@
-// import React, { useState } from 'react'
-// import { Typography, AppBar, Toolbar, Box,  Container } from '@material-ui/core';
-// import { PhotoCamera, AccountCircle } from '@material-ui/icons';
-// import { Link } from 'react-router-dom';
-// import useStyles from '../styles';
-
-// function Navbar() {
-//   const classes = useStyles();
-//   return (
-//     <div>
-//       <AppBar position="relative">
-//         <Toolbar>
-//           <PhotoCamera className={classes.icon} />
-//           <Typography variant="h6">
-//             About
-//           </Typography>
-//           <Typography variant="h6">
-//             Contact Us
-//           </Typography>
-//           {/* <Link to='/' className="navbar-logo">
-//             TRVL
-//           </Link> */}
-//         </Toolbar>
-//       </AppBar>
-//     </div>
-//   )
-// }
-
-// export default Navbar
-
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -37,32 +7,19 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 // import { PhotoCamera, AccountCircle } from '@material-ui/icons';
 import { PhotoCamera } from '@material-ui/icons';
-import { Link } from 'react-router-dom';
-import { Box } from '@material-ui/core';
-
-
+import Link from '@material-ui/core/Link';
+import { Box, Menu, MenuItem } from '@material-ui/core';
 import useStyles from '../styles';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   title: {
-//     flexGrow: 1,
-//   },
-// }));
 
 export default function Navbar() {
   const classes = useStyles();
-  const navList = ["Home", "About", "Contacts"];
+  // const navList = ["Home", "About", "Contacts"];
 
   return (
     <div className={classes.root}>
       <AppBar position="sticky">
-        {/* may be make a seperate component fror the toolbar and have the appbar in the app.js */}
+        {/* may be make a seperate component for the toolbar and have the appbar in the app.js */}
         <Toolbar>
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
 
@@ -75,21 +32,29 @@ export default function Navbar() {
             </Box>
 
             {/* Links */}
-            <Box className={classes.navlinks}>
-              <Typography variant="h6" className={classes.menuButton}>
-                Home
-              </Typography>
-              <Typography variant="h6" className={classes.menuButton}>
+            <Box className={classes.navlinks} sx={{ display: "flex" }}>
+              <Typography variant="h6" className={classes.navlinks}>
                 {/* <Button color="inherit">AboutB</Button> */}
-                About
+                <Link href="Home" className={classes.navlinks} color="inherit">Home </Link>
               </Typography>
+              <Typography variant="h6" className={classes.navlinks}>
+                {/* <Button color="inherit">AboutB</Button> */}
+                <Link href="About" className={classes.navlinks} color="inherit">About</Link>
+              </Typography>
+              {/* This is another way that works too
+              <Link href="About" className={classes.menuButton} color="inherit">
+                <Typography variant="h6" className={classes.menuButton}>
+                  About-LT
+                </Typography>
+              </Link> */}
               <Typography variant="h6" className={classes.menuButton}>
-                Contact Us
+                <Link href="Contacts" className={classes.menuButton} color="inherit">Contact Us</Link>
               </Typography>
             </Box>
 
+            {/* Button Link */}
             <Box>
-              <Button variant='contained' disableElevation>End</Button>
+              <Button variant='contained' disableElevation component={Link} to={'contacts'}>End</Button>
             </Box>
 
           </Box>
