@@ -1,6 +1,6 @@
 import React from 'react';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { teal, lime } from '@material-ui/core/colors';
@@ -29,7 +29,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <BrowserRouter>
+        <Router>
           <CssBaseline />
           <Navbar />
           <Routes>
@@ -39,7 +39,7 @@ function App() {
             <Route path="Contacts" element={<Contacts />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </Router>
       </div>
     </ThemeProvider>
   );

@@ -48,7 +48,7 @@ export default function Navbar() {
                 </Typography>
               </Link> */}
               <Typography variant="h6" className={classes.menuButton}>
-                <Link href="Contacts" className={classes.menuButton} color="inherit">Contact Us</Link>
+                <Link href="Contacts" className={classes.menuButton} color="inherit">Contact</Link>
               </Typography>
             </Box>
 

@@ -29,6 +29,11 @@ const useStyles = makeStyles((theme) => ({
       // color: "white",
       textDecoration: "none",
       // borderBottom: "1px solid white",
+    },
+    "&:focus": {
+      // color: "white",
+      textDecoration: "none",
+      // borderBottom: "1px solid white",
     }
   },
   title: {
