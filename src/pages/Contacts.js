@@ -9,8 +9,8 @@ function Contacts() {
       {/* <Typography variant='h3'>This is the Contacts page!</Typography> */}
       <Card style={{maxWidth:450, margin:'0 auto', padding:'5px 5px'}}>
         <CardContent>
-          <Typography gutterBottom variant='h5'>Contact Us</Typography>
-          <Typography gutterBottom color='textSecondary' variant='body2' component='p'>Fill the form and I will get back to you shortly</Typography>
+          <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
+          <Typography gutterBottom color='textSecondary' variant='body2' align='center' component='p'>Submit your details and I will get back to you shortly</Typography>
           <form>
             <Grid container spacing={1}>
               <Grid xs={12} sm={6} item>
