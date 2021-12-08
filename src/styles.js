@@ -1,18 +1,18 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme)=>({
+const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8,0,5)
+    padding: theme.spacing(8, 0, 5)
   },
   icon: {
     marginRight: '20px',
   },
-  navLogo:{
-    marginLeft: theme.spacing (1),
-    marginRight: theme.spacing (1),
+  navLogo: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
   },
-  buttons:{
+  buttons: {
     marginTop: '40px',
   },
   root: {
@@ -24,27 +24,43 @@ const useStyles = makeStyles((theme)=>({
     marginRight: theme.spacing(1),
     marginLeft: theme.spacing(1),
     cursor: 'pointer',
+    color: theme.palette.secondary,
+    "&:hover": {
+      // color: "white",
+      textDecoration: "none",
+      // borderBottom: "1px solid white",
+    },
+    "&:focus": {
+      // color: "white",
+      textDecoration: "none",
+      // borderBottom: "1px solid white",
+    }
   },
   title: {
     flexGrow: 1,
   },
   footer: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.secondary.light,
   },
   navlinks: {
-    // marginLeft: theme.spacing(10),
-    display: "flex",
-    // marginRight: theme.spacing(3),
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "20px",
-    marginLeft: theme.spacing(20),
+    // display: "flex",
+    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(1),
+    cursor: 'pointer',
+    // color: 'green',
     "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
+      // color: "white",
+      textDecoration: "none",
     },
+    // link: {
+    //   textDecoration: "none",
+    //   color: "white",
+    //   fontSize: "20px",
+    //   marginLeft: theme.spacing(20),
+    //   "&:hover": {
+    //     color: "yellow",
+    //     borderBottom: "1px solid white",
+    //   },
   },
 
 }));
