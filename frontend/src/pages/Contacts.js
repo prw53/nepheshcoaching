@@ -1,12 +1,14 @@
 import { Box, Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
+
+// import axios from 'axios';
 
 const initialFValues = {
   firstName: '',
   lastName: '',
   email: '',
-  message: '',
+  message: ''
 }
 
 function Contacts() {
@@ -17,33 +19,39 @@ function Contacts() {
   const handleInputChange = e => {
     const { name, value } = e.target
     setValues({
-      ...values.message,
+      ...values,
       [name]: value
     })
   }
 
-  const handleSend = async () => {
-    setSent(true)
-    setText(
-      'First Name: ' + initialFValues.firstName +
-      'Last Name: ' + initialFValues.lastName
-    )
-    try {
-      await axios.post("http://localhost:4000/send_mail", {
-        text: text,
-        // method: "POST",
-        // headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify({ values })
+  const form = useRef();
 
-        // method: "POST",
-        // headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify({ nick, email, message })
-
-      })
-    } catch (error) {
-      console.log(error)
-    }
+  const sendEmail = (e) => {
+    e.preventDefault();
+    alert(values.firstName, values.lastName, values.email, values.message)
+    console.log(values)
+    // emailjs.send('service_f6ynrg8', 'template_i63ce1y', values, 'user_AiIgMvHTL545jVQ7Y2tRb')
+    //   .then((result) => {
+    //     console.log(result.text);
+    //   }, (error) => {
+    //     console.log(error.text);
+    //   });
   };
+
+  // const handleSendEmail = async () => {
+  //   setSent(true)
+  //   setText(
+  //     'First Name: ' + initialFValues.firstName +
+  //     'Last Name: ' + initialFValues.lastName
+  //   )
+  //   try {
+  //     console.log('Trying catch')
+  //     // await axios.post("http://localhost:4000/send_mail", {
+  //     //   text: text,
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // };
 
   return (
     <Box marginTop={3} marginBottom={3}>
@@ -51,7 +59,19 @@ function Contacts() {
       <Card style={{ maxWidth: 450, margin: '0 auto', padding: '5px 5px' }}>
         <CardContent>
           {!sent ? (
-            <form onSubmit={handleSend}>
+            <form Ref={form} onSubmit={sendEmail}>
+
+             
+                {/* <label>Name</label>
+                <input type="text" name="firstName" />
+                <label>Name</label>
+                <input type="text" name="lastName" />
+                <label>Email</label>
+                <input type="email" name="email" />
+                <label>Message</label>
+                <textarea name="message" />
+                <input type="submit" value="Send" /> */}
+           
 
               {/* <input type='text' value={text} onChange={(e) => setText(e.target.value)} />
               <button type='submit' >Send Email</button> */}
