@@ -5,10 +5,10 @@ import emailjs from 'emailjs-com';
 // import axios from 'axios';
 
 const initialFValues = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  message: ''
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: ""
 }
 
 function Contacts() {
@@ -16,22 +16,33 @@ function Contacts() {
   const [text, setText] = useState("");
   const [values, setValues] = useState(initialFValues);
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleInputChange = e => {
     const { name, value } = e.target
     setValues({
       ...values,
       [name]: value
     })
-  }
+  };
 
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-    alert(values.firstName, values.lastName, values.email, values.message)
-    console.log(values)
-    // emailjs.send('service_f6ynrg8', 'template_i63ce1y', values, 'user_AiIgMvHTL545jVQ7Y2tRb')
+    // alert(values.firstName, values.lastName, values.email, values.message)
+    // alert(firstName + lastName + email + message)
+    // console.log(values)
+
+    alert(values.firstName + values.lastName + values.email + values.message)
+    setSent(true)
+
+    // emailjs.sendForm('service_f6ynrg8', 'template_i63ce1y', form.current, 'user_AiIgMvHTL545jVQ7Y2tRb')
     //   .then((result) => {
+    //     setSent(true)
     //     console.log(result.text);
     //   }, (error) => {
     //     console.log(error.text);
@@ -59,7 +70,7 @@ function Contacts() {
       <Card style={{ maxWidth: 450, margin: '0 auto', padding: '5px 5px' }}>
         <CardContent>
           {!sent ? (
-            <form Ref={form} onSubmit={sendEmail}>
+            <form ref={form} onSubmit={sendEmail}>
 
              
                 {/* <label>Name</label>
@@ -83,6 +94,8 @@ function Contacts() {
                   <TextField
                     label='First Name'
                     name='firstName'
+                    // value={firstName} 
+                    // onChange={(e) => setFirstName(e.target.value)}
                     value={values.firstName}
                     onChange={handleInputChange}
                     placeholder='Enter first name'
@@ -94,7 +107,10 @@ function Contacts() {
                   <TextField
                     label='Last Name'
                     name='lastName'
+                    // value={lastName} 
+                    // onChange={(e) => setLastName(e.target.value)}
                     value={values.lastName}
+                    onChange={handleInputChange}
                     placeholder='Enter last name'
                     variant='outlined'
                     fullWidth
@@ -105,7 +121,10 @@ function Contacts() {
                     type='email'
                     label='Email'
                     name='email'
+                    // value={email} 
+                    // onChange={(e) => setEmail(e.target.value)}
                     value={values.email}
+                    onChange={handleInputChange}
                     placeholder='Enter your email'
                     variant='outlined'
                     fullWidth
@@ -115,7 +134,10 @@ function Contacts() {
                   <TextField
                     label='Message'
                     name='message'
+                    // value={message} 
+                    // onChange={(e) => setMessage(e.target.value)}
                     value={values.message}
+                    onChange={handleInputChange}
                     multiline minRows={5}
                     placeholder='Type your message here...'
                     variant='outlined'
