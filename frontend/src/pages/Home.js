@@ -17,10 +17,10 @@ function Home() {
         <div className={classes.container}>
           <Container maxWidth="sm">
             <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-              My Photo Album
+              Welcome to Nephesh Coaching
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Hello everyone this is a very long sentance to see how well it wraps round and makes a good demonstration of a paragraph.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum eros libero, sit amet porttitor nisl consequat eu. In a massa at mi bibendum varius vel quis enim. Cras aliquam fringilla dolor, id feugiat mi molestie eget. Praesent vulputate convallis mauris eget sodales. Quisque quis libero mauris. Morbi rutrum tortor risus, non scelerisque urna facilisis nec. Praesent semper consectetur mauris, eget efficitur urna rhoncus vel. 
             </Typography>
             <div className={classes.buttons}>
               <Grid container spacing={2} justifyContent="center">

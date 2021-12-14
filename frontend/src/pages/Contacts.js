@@ -86,10 +86,10 @@ function Contacts() {
                     onChange={handleInputChange}
                     multiline minRows={5}
                     // maxlength = {20}
-                    inputProps={{ maxLength: 260 }}
+                    inputProps={{ maxLength: 500 }}
                     // inputProps={{min: 0, style: { textAlign: 'center' }}}
                     placeholder='Type your message here...'
-                    helperText={`char... ${values.message.length}/260`}
+                    helperText={`char... ${values.message.length}/500`}
                     variant='outlined'
                     fullWidth
                     required />
@@ -100,9 +100,12 @@ function Contacts() {
               </Grid>
             </form>
           ) : (
-            <Typography variant='h6' align='center'>
-              Thank you, I will be in contact!
-            </Typography>
+            <Box>
+              <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
+              <Typography variant='h6' align='center'>
+                Thank you, I will be in contact soon
+              </Typography>
+            </Box>
           )}
         </CardContent>
       </Card>
