@@ -1,21 +1,7 @@
 import React from 'react';
-import { Box, Button, AppBar, Toolbar, IconButton, PhotoCamera, Typography, Link } from '@mui/material';
-// import { PhotoCamera } from '@mui/icons-material';
+import { Box, Button, AppBar, Toolbar, IconButton, Typography, Link } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import { PhotoCamera, AccountCircle } from '@material-ui/icons';
-// import { PhotoCamera } from '@material-ui/icons';
-// import Link from '@material-ui/core/Link';
-// import { Box, Menu, MenuItem } from '@material-ui/core';
-
 import useStyles from '../styles';
-
 
 export default function Navbar() {
   const classes = useStyles();
