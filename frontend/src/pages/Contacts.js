@@ -1,61 +1,46 @@
 import { Box, Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
+
 
 const initialFValues = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  message: '',
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: ""
 }
 
 function Contacts() {
   const [sent, setSent] = useState(false);
-  const [text, setText] = useState("");
   const [values, setValues] = useState(initialFValues);
 
   const handleInputChange = e => {
     const { name, value } = e.target
     setValues({
-      ...values.message,
+      ...values,
       [name]: value
     })
-  }
+  };
 
-  const handleSend = async () => {
-    setSent(true)
-    setText(
-      'First Name: ' + initialFValues.firstName +
-      'Last Name: ' + initialFValues.lastName
-    )
-    try {
-      await axios.post("http://localhost:4000/send_mail", {
-        text: text,
-        // method: "POST",
-        // headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify({ values })
+  const form = useRef();
 
-        // method: "POST",
-        // headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify({ nick, email, message })
-
-      })
-    } catch (error) {
-      console.log(error)
-    }
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_f6ynrg8', 'template_i63ce1y', form.current, 'user_AiIgMvHTL545jVQ7Y2tRb')
+      .then((result) => {
+        setSent(true)
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   };
 
   return (
     <Box marginTop={3} marginBottom={3}>
-      {/* <Typography variant='h3'>This is the Contacts page!</Typography> */}
       <Card style={{ maxWidth: 450, margin: '0 auto', padding: '5px 5px' }}>
         <CardContent>
           {!sent ? (
-            <form onSubmit={handleSend}>
-
-              {/* <input type='text' value={text} onChange={(e) => setText(e.target.value)} />
-              <button type='submit' >Send Email</button> */}
-
+            <form ref={form} onSubmit={sendEmail}>
               <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
               <Typography gutterBottom color='textSecondary' variant='body2' align='center' component='p'>Submit your details and I will get back to you shortly</Typography>
               <Grid container spacing={1}>
@@ -75,6 +60,7 @@ function Contacts() {
                     label='Last Name'
                     name='lastName'
                     value={values.lastName}
+                    onChange={handleInputChange}
                     placeholder='Enter last name'
                     variant='outlined'
                     fullWidth
@@ -86,6 +72,7 @@ function Contacts() {
                     label='Email'
                     name='email'
                     value={values.email}
+                    onChange={handleInputChange}
                     placeholder='Enter your email'
                     variant='outlined'
                     fullWidth
@@ -96,8 +83,13 @@ function Contacts() {
                     label='Message'
                     name='message'
                     value={values.message}
+                    onChange={handleInputChange}
                     multiline minRows={5}
+                    // maxlength = {20}
+                    inputProps={{ maxLength: 500 }}
+                    // inputProps={{min: 0, style: { textAlign: 'center' }}}
                     placeholder='Type your message here...'
+                    helperText={`char... ${values.message.length}/500`}
                     variant='outlined'
                     fullWidth
                     required />
@@ -106,12 +98,14 @@ function Contacts() {
                   <Button type='submit' variant='contained' color='primary' fullWidth>Submit</Button>
                 </Grid>
               </Grid>
-
             </form>
           ) : (
-            <Typography variant='h6' align='center'>
-              Thank you, I will be in contact!
-            </Typography>
+            <Box>
+              <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
+              <Typography variant='h6' align='center'>
+                Thank you, I will be in contact soon
+              </Typography>
+            </Box>
           )}
         </CardContent>
       </Card>

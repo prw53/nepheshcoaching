@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
+// import TitilliumWeb from './Fonts/TitilliumWeb-SemiBold.ttf';
+
 
 // Customise the Material-UI theme
 const theme = createTheme({
@@ -21,6 +23,25 @@ const theme = createTheme({
       main: lime[600],
     },
   },
+  typography: {
+    fontFamily: [
+      'Corinthia', 
+      'cursive',
+      'Jost'
+    ].join(','),
+  },
+  // typography: {
+  //   fontFamily: 'Josefin Sans'
+  // },
+  // body: {
+  //   font-family: 'Titillium Web', sans-serif
+  // }
+  // .heading {
+  //   font-weight: 700;
+  // }
+  // .subheading {
+  //   font-weight: 300;
+  // }
 });
 
 function App() {

@@ -43,13 +43,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.light,
   },
   navlinks: {
-    // display: "flex",
     marginRight: theme.spacing(1),
     marginLeft: theme.spacing(1),
     cursor: 'pointer',
-    // color: 'green',
     "&:hover": {
-      // color: "white",
+      color: "orange",
       textDecoration: "none",
     },
     // link: {
@@ -62,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
     //     borderBottom: "1px solid white",
     //   },
   },
-
 }));
 
 export default useStyles;
