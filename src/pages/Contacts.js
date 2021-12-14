@@ -1,8 +1,6 @@
-// import { Box, Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
 import { Box, Button, Card, CardContent, Grid, TextField, Typography } from '@mui/material';
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
-
 
 const initialFValues = {
   firstName: "",
@@ -14,7 +12,6 @@ const initialFValues = {
 function Contacts() {
   const [sent, setSent] = useState(false);
   const [values, setValues] = useState(initialFValues);
-
   const handleInputChange = e => {
     const { name, value } = e.target
     setValues({
@@ -43,7 +40,9 @@ function Contacts() {
           {!sent ? (
             <form ref={form} onSubmit={sendEmail}>
               <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
-              <Typography gutterBottom color='textSecondary' variant='body2' align='center' component='p'>Submit your details and I will get back to you shortly</Typography>
+              <Typography gutterBottom color='textSecondary' variant='body2' align='center' component='p'>
+                Please submit your details and I will get back to you shortly
+              </Typography>
               <Grid container spacing={1}>
                 <Grid xs={12} sm={6} item>
                   <TextField
