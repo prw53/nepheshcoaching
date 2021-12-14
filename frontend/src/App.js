@@ -1,9 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { CssBaseline } from '@material-ui/core';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { lime, teal } from '@mui/material/colors';
+// import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+// import { teal, lime } from '@material-ui/core/colors';
 // import useStyles from './styles';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';

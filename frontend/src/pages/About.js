@@ -1,6 +1,7 @@
-import { Typography } from '@material-ui/core';
+// import { Typography } from '@material-ui/core';
 import React from 'react';
-import Link from '@material-ui/core/Link';
+import {Typography, Link} from '@mui/material';
+// import Link from '@material-ui/core/Link';
 import useStyles from '../styles';
 
 function About() {

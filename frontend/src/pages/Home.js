@@ -1,7 +1,6 @@
 import React from 'react'
-import { Typography, Grid, Container } from '@material-ui/core';
-// import { PhotoCamera } from '@material-ui/icons';
-import { Button } from '@material-ui/core';
+import {Typography, Grid, Container, Button} from '@mui/material';
+
 import useStyles from '../styles';
 
 function Home() {
