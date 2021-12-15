@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-// import WebFont from 'webfontloader';
-// WebFont.load({
-//   google: {
-//     families: ['Josefin Sans:300,400,700', 'sans-serif']
-//   }
-// });
+import './fonts.css'
 
 ReactDOM.render(
   <React.StrictMode>
