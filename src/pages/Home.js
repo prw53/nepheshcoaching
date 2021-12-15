@@ -1,6 +1,5 @@
 import React from 'react'
 import { Typography, Grid, Container, Box, Button } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
 import useStyles from '../styles';
 
 function Home() {
@@ -8,13 +7,16 @@ function Home() {
 
   return (
     <div>
-      {/* <Typography variant="h2">
-        This is the Home page!
-      </Typography> */}
-
       <main>
         <div className={classes.container}>
+
           <Container maxWidth="sm">
+            <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+              Nephesh Coaching
+            </Typography>
+            <Typography sx={{ fontFamily: 'calligraffiti' }} variant="h2" align="center" color="textPrimary" gutterBottom>
+              Nephesh Coaching
+            </Typography>
             <Typography sx={{ fontFamily: 'Corinthia' }} variant="h2" align="center" color="textPrimary" gutterBottom>
               Nephesh Coaching
             </Typography>

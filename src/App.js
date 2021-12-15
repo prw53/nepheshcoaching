@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { lime, teal } from '@mui/material/colors';
@@ -10,7 +9,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
-// import TitilliumWeb from './Fonts/TitilliumWeb-SemiBold.ttf';
 import useStyles from './styles';
 
 // Customise the Material-UI theme
@@ -26,8 +24,11 @@ const theme = createTheme({
   typography: {
     fontFamily: [
       'Jost',
-      'Corinthia', 'cursive',
     ].join(','),
+    // h2: {
+    //   // fontFamily: 'calligraffiti'
+    //   fontFamily: 'Corinthia'
+    // },
   },
 });
 
