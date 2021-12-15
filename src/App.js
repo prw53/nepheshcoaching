@@ -11,7 +11,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 // import TitilliumWeb from './Fonts/TitilliumWeb-SemiBold.ttf';
-
+import useStyles from './styles';
 
 // Customise the Material-UI theme
 const theme = createTheme({
@@ -29,18 +29,12 @@ const theme = createTheme({
       'Corinthia', 'cursive',
     ].join(','),
   },
-  // typography: {
-  //   fontFamily: 'Josefin Sans'
-  // },
-  // body: {
-  //   font-family: 'Titillium Web', sans-serif
-  // }
-  // .heading {
-  //   font-weight: 700;
-  // }
-  // .subheading {
-  //   font-weight: 300;
-  // }
+});
+
+const fancyFont = createTheme({
+  typography: [
+    'Corinthia', 'cursive',
+  ]
 });
 
 function App() {
