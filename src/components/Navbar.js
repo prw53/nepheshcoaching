@@ -33,17 +33,17 @@ export default function Navbar() {
 
             {/* Nav Links */}
             <Box sx={{ display: "flex" }}>
-              <MenuItem >
+              <MenuItem>
                 <Typography variant="h6" textAlign="center">
                   <Link href="Home" color="inherit">Home </Link>
                 </Typography>
               </MenuItem>
-              <MenuItem >
+              <MenuItem>
                 <Typography variant="h6" textAlign="center">
                   <Link href="About" className={classes.navlinks} color="inherit">About</Link>
                 </Typography>
               </MenuItem>
-              <MenuItem >
+              <MenuItem>
                 <Typography variant="h6" textAlign="center">
                   <Link href="Contacts" className={classes.navlinks} color="inherit">Contact Me</Link>
                 </Typography>

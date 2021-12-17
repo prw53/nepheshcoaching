@@ -43,24 +43,25 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.light,
   },
   navlinks: {
-    marginRight: theme.spacing(4),
-    marginLeft: theme.spacing(8),
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
     cursor: 'pointer',
     textDecoration: "none",
     "&:hover": {
-      // color: "orange",
+      color: "orange",
       textDecoration: "none",
     },
-    link: {
-      textDecoration: "none",
-      color: "white",
-      fontSize: "20px",
-      marginLeft: theme.spacing(20),
-      "&:hover": {
-        color: "yellow",
-        // borderBottom: "1px solid white",
-      },
-  }},
+  //   link: {
+  //     textDecoration: "none",
+  //     color: "white",
+  //     fontSize: "20px",
+  //     marginLeft: theme.spacing(20),
+  //     "&:hover": {
+  //       color: "yellow",
+  //       borderBottom: "1px solid white",
+  //     },
+  // }
+},
 }));
 
 export default useStyles;
