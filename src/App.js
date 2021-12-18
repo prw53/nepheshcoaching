@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import useStyles from './styles';
+import Navbar2 from './components/Navbar2';
 
 // Customise the Material-UI theme
 const theme = createTheme({
@@ -47,6 +48,7 @@ function App() {
         <Router>
           <CssBaseline />
           <Navbar />
+          {/* <Navbar2 /> */}
           <Routes>
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="Home" element={<Home />} />

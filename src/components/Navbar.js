@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, AppBar, Toolbar, IconButton, Typography, Link, MenuItem } from '@mui/material';
+import { Box, Button, AppBar, Tabs, Tab, Toolbar, IconButton, Typography, Link, MenuItem } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 // import { MenuIcon } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         {/* may be make a seperate component for the toolbar and have the appbar in the app.js */}
         <Toolbar>
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
@@ -33,6 +33,7 @@ export default function Navbar() {
 
             {/* Nav Links */}
             <Box sx={{ display: "flex" }}>
+
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
                   <Link href="Home" color="inherit">Home </Link>
@@ -40,19 +41,17 @@ export default function Navbar() {
               </MenuItem>
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
-                  <Link href="About" className={classes.navlinks} color="inherit">About</Link>
+                  <Link href="About" color="inherit">About</Link>
                 </Typography>
               </MenuItem>
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
-                  <Link href="Contacts" className={classes.navlinks} color="inherit">Contact Me</Link>
+                  <Link href="Contacts" color="inherit">Contact Me</Link>
                 </Typography>
               </MenuItem>
               {/* <Typography variant="h6" className={classes.menuButton}>{page}</Typography> */}
 
             </Box>
-
-          
 
             {/* Button Link */}
             <Box>

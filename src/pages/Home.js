@@ -11,9 +11,9 @@ function Home() {
         <div className={classes.container}>
 
           <Container maxWidth="sm">
-            <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+            {/* <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
               Nephesh Coaching
-            </Typography>
+            </Typography> */}
             <Typography sx={{ fontFamily: 'calligraffiti' }} variant="h2" align="center" color="textPrimary" gutterBottom>
               Nephesh Coaching
             </Typography>

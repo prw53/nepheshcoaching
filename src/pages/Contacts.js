@@ -1,6 +1,8 @@
-import { Box, Button, Card, CardContent, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent,FormHelperText, Grid, TextField, Typography } from '@mui/material';
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
+import useStyles from '../styles';
+import { textAlign } from '@mui/system';
 
 const initialFValues = {
   firstName: "",
@@ -10,6 +12,7 @@ const initialFValues = {
 }
 
 function Contacts() {
+  const classes = useStyles();
   const [sent, setSent] = useState(false);
   const [values, setValues] = useState(initialFValues);
   const handleInputChange = e => {
@@ -80,19 +83,19 @@ function Contacts() {
                 </Grid>
                 <Grid xs={12} item>
                   <TextField
+                    className={classes.helperTextRight}
                     label='Message'
                     name='message'
                     value={values.message}
                     onChange={handleInputChange}
                     multiline minRows={5}
-                    // maxlength = {20}
                     inputProps={{ maxLength: 500 }}
-                    // inputProps={{min: 0, style: { textAlign: 'center' }}}
                     placeholder='Type your message here...'
-                    helperText={`char... ${values.message.length}/500`}
+                    // helperText={`char... ${values.message.length}/500`}
                     variant='outlined'
                     fullWidth
                     required />
+                    <FormHelperText sx={{textAlign: 'right'}} align='right'>{values.message.length}/500</FormHelperText>
                 </Grid>
                 <Grid xs={12} item>
                   <Button type='submit' variant='contained' color='primary' fullWidth>Submit</Button>

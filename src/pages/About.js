@@ -1,11 +1,11 @@
 import React from 'react';
-import { Typography, Link } from '@mui/material';
+import { Container, Typography, Link } from '@mui/material';
 import useStyles from '../styles';
 
 function About() {
-  // const classes = useStyles();
+  const classes = useStyles();
   return (
-    <div>
+    <Container maxWidth='md'>
       <Typography variant='h2'>
         This is the About page!
       </Typography>
@@ -19,7 +19,7 @@ function About() {
       <Typography variant="p">
         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vestibulum nec odio felis. Sed purus dolor, condimentum vitae eleifend ac, ultricies sed augue. Praesent a varius ex. Cras placerat tempor eros et suscipit. Curabitur vitae volutpat diam. Etiam faucibus neque mauris, eget laoreet lorem ultrices et. Donec lobortis semper lacus. Nulla eleifend fermentum magna, a scelerisque enim tincidunt quis. Phasellus at tempor diam. Aenean eu sollicitudin libero. Vestibulum aliquam ligula sit amet dui auctor ultrices id non purus.
       </Typography>
-    </div>
+    </Container>
   )
 }
 
