@@ -1,0 +1,13 @@
+.textWrapLeft {
+  clear: right;
+  float: left;
+  margin: 1rem;
+  max-width: 20rem;
+}
+
+.textWrapRight {
+  clear: left;
+  float: right;
+  margin: 1rem;
+  max-width: 20rem;
+}

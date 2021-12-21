@@ -10,15 +10,17 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import useStyles from './styles';
+import Navbar2 from './components/Navbar2';
+import './App.css'
 
 // Customise the Material-UI theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: teal[400],
+      main: '#d3a7ab',
     },
     secondary: {
-      main: lime[600],
+      main: '#dfe7f2',
     },
   },
   typography: {
@@ -47,13 +49,14 @@ function App() {
         <Router>
           <CssBaseline />
           <Navbar />
+          {/* <Navbar2 /> */}
           <Routes>
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />
             <Route path="Contacts" element={<Contacts />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       </div>
     </ThemeProvider>
