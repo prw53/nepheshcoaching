@@ -6,24 +6,31 @@ function Home() {
   const classes = useStyles();
 
   return (
-    <div>
-      <main>
-        <div className={classes.container}>
+    <Box marginTop={3} marginBottom={3}>
+      {/* <div className={classes.container}> */}
 
-          <Container maxWidth="sm">
-            {/* <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Container maxWidth="md" >
+          {/* <Typography sx={{ fontFamily: 'MrDeHaviland' }}  variant="h2" align="center" color="textPrimary" gutterBottom>
+              Nephesh Coaching
+            </Typography>
+                <Typography sx={{ fontFamily: 'Blacksword' }}  variant="h2" align="center" color="textPrimary" gutterBottom>
               Nephesh Coaching
             </Typography> */}
-            <Typography sx={{ fontFamily: 'calligraffiti' }} variant="h2" align="center" color="textPrimary" gutterBottom>
+          {/* <Typography sx={{ fontFamily: 'calligraffiti' }} variant="h2" align="center" color="textPrimary" gutterBottom>
               Nephesh Coaching
-            </Typography>
-            <Typography sx={{ fontFamily: 'Corinthia' }} variant="h2" align="center" color="textPrimary" gutterBottom>
-              Nephesh Coaching
-            </Typography>
-            <Typography variant="p" align="center" color="textSecondary" paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum eros libero, sit amet porttitor nisl consequat eu. In a massa at mi bibendum varius vel quis enim. Cras aliquam fringilla dolor, id feugiat mi molestie eget. Praesent vulputate convallis mauris eget sodales. Quisque quis libero mauris. Morbi rutrum tortor risus, non scelerisque urna facilisis nec. Praesent semper consectetur mauris, eget efficitur urna rhoncus vel.
-            </Typography>
-            <div className={classes.buttons}>
+            </Typography> */}
+
+          <Typography sx={{ fontFamily: 'Corinthia' }} variant="h1" align="center" color="textPrimary" gutterBottom>
+            Nephesh &nbsp; Coaching
+          </Typography>
+          <Typography variant="p" align="center" color="textSecondary" paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum eros libero, sit amet porttitor nisl consequat eu. In a massa at mi bibendum varius vel quis enim. Cras aliquam fringilla dolor, id feugiat mi molestie eget. Praesent vulputate convallis mauris eget sodales. Quisque quis libero mauris. Morbi rutrum tortor risus, non scelerisque urna facilisis nec. Praesent semper consectetur mauris, eget efficitur urna rhoncus vel.
+          </Typography>
+          <Typography variant="p" align="center" color="textSecondary" paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum eros libero, sit amet porttitor nisl consequat eu. In a massa at mi bibendum varius vel quis enim. Cras aliquam fringilla dolor, id feugiat mi molestie eget. Praesent vulputate convallis mauris eget sodales. Quisque quis libero mauris. Morbi rutrum tortor risus, non scelerisque urna facilisis nec. Praesent semper consectetur mauris, eget efficitur urna rhoncus vel.
+          </Typography>
+
+          {/* <div className={classes.buttons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
@@ -48,13 +55,11 @@ function Home() {
                   </Button>
                 </Grid>
               </Grid>
-            </div>
+            </div> */}
 
-          </Container>
-        </div>
-      </main>
-
-    </div>
+        </Container>
+       {/* </div> */}
+    </Box>
   )
 };
 

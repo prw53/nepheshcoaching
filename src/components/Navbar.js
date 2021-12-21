@@ -26,9 +26,9 @@ export default function Navbar() {
 
             {/* Menu Button */}
             <Box >
-              <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+              {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu">
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
             </Box>
 
             {/* Nav Links */}
@@ -36,17 +36,17 @@ export default function Navbar() {
 
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
-                  <Link href="Home" color="inherit">Home </Link>
+                  <Link href="Home" color="inherit" underline="none">Home </Link>
                 </Typography>
               </MenuItem>
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
-                  <Link href="About" color="inherit">About</Link>
+                  <Link href="About" color="inherit" underline="none">About</Link>
                 </Typography>
               </MenuItem>
               <MenuItem>
                 <Typography variant="h6" textAlign="center">
-                  <Link href="Contacts" color="inherit">Contact Me</Link>
+                  <Link href="Contacts" color="inherit" underline="none">Contact</Link>
                 </Typography>
               </MenuItem>
               {/* <Typography variant="h6" className={classes.menuButton}>{page}</Typography> */}
@@ -55,7 +55,7 @@ export default function Navbar() {
 
             {/* Button Link */}
             <Box>
-              <Button variant='contained' disableElevation component={Link} to={'contacts'}>End</Button>
+              {/* <Button variant='contained' disableElevation component={Link} to={'contacts'}>End</Button> */}
             </Box>
 
           </Box>

@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent,FormHelperText, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent,Container,FormHelperText, Grid, TextField, Typography } from '@mui/material';
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import useStyles from '../styles';
@@ -10,6 +10,7 @@ const initialFValues = {
   email: "",
   message: ""
 }
+const maxMessage = "500"
 
 function Contacts() {
   const classes = useStyles();
@@ -37,12 +38,13 @@ function Contacts() {
   };
 
   return (
-    <Box marginTop={3} marginBottom={3}>
+    <Box marginTop={5} marginBottom={3}>
+      <Container>
       <Card style={{ maxWidth: 450, margin: '0 auto', padding: '5px 5px' }}>
         <CardContent>
           {!sent ? (
             <form ref={form} onSubmit={sendEmail}>
-              <Typography gutterBottom variant='h5' align='center'>Contact Form</Typography>
+              <Typography gutterBottom variant='h4' align='center'>Contact Form</Typography>
               <Typography gutterBottom color='textSecondary' variant='body2' align='center' component='p'>
                 Please submit your details and I will get back to you shortly
               </Typography>
@@ -89,13 +91,13 @@ function Contacts() {
                     value={values.message}
                     onChange={handleInputChange}
                     multiline minRows={5}
-                    inputProps={{ maxLength: 500 }}
+                    inputProps={{ maxLength: maxMessage }}
                     placeholder='Type your message here...'
                     // helperText={`char... ${values.message.length}/500`}
                     variant='outlined'
                     fullWidth
                     required />
-                    <FormHelperText sx={{textAlign: 'right'}} align='right'>{values.message.length}/500</FormHelperText>
+                    <FormHelperText sx={{textAlign: 'right'}} >{values.message.length}/{maxMessage}</FormHelperText>
                 </Grid>
                 <Grid xs={12} item>
                   <Button type='submit' variant='contained' color='primary' fullWidth>Submit</Button>
@@ -112,6 +114,7 @@ function Contacts() {
           )}
         </CardContent>
       </Card>
+      </Container>
     </Box>
   )
 };
