@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 5)
+    padding: theme.spacing(5, 0, 5)
   },
   icon: {
     marginRight: '20px',
@@ -43,23 +43,28 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.light,
   },
   navlinks: {
-    marginRight: theme.spacing(1),
-    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
     cursor: 'pointer',
+    textDecoration: "none",
     "&:hover": {
-      // color: "orange",
+      color: "orange",
       textDecoration: "none",
     },
-    // link: {
-    //   textDecoration: "none",
-    //   color: "white",
-    //   fontSize: "20px",
-    //   marginLeft: theme.spacing(20),
-    //   "&:hover": {
-    //     color: "yellow",
-    //     borderBottom: "1px solid white",
-    //   },
-  },
+  //   link: {
+  //     textDecoration: "none",
+  //     color: "white",
+  //     fontSize: "20px",
+  //     marginLeft: theme.spacing(20),
+  //     "&:hover": {
+  //       color: "yellow",
+  //       borderBottom: "1px solid white",
+  //     },
+  // }
+},
+helperTextRight: {
+  textAlign: 'right'
+}
 }));
 
 export default useStyles;

@@ -1,72 +1,80 @@
 import React from 'react';
-import { Box, Button, AppBar, Toolbar, IconButton, Typography, Link } from '@mui/material';
+import { Box, Button, AppBar, Tabs, Tab, Toolbar, IconButton, Typography, Link, MenuItem } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+// import { MenuIcon } from '@mui/icons-material';
+import MenuIcon from '@mui/icons-material/Menu';
+
+
 import useStyles from '../styles';
 
 export default function Navbar() {
   const classes = useStyles();
-  // const navList = ["Home", "About", "Contacts"];
+  const navList = ["Home", "About", "Contacts"];
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleCloseNavMenu = (page) => {
+    setAnchorElNav(null);
+    // alert('The page is', page);
+  };
 
   return (
     <div className={classes.root}>
-      <AppBar position="sticky">
+      <AppBar position="static">
         {/* may be make a seperate component for the toolbar and have the appbar in the app.js */}
         <Toolbar>
           <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
 
-            {/* Logo */}
+            {/* Menu Button */}
             <Box >
-              {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"> */}
-              <IconButton className={classes.navLogo} color="inherit">
-                <PhotoCameraIcon />
-              </IconButton>
+              {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+                <MenuIcon />
+              </IconButton> */}
             </Box>
 
-            {/* Links */}
-            <Box className={classes.navlinks} sx={{ display: "flex" }}>
-              <Typography variant="h6" className={classes.navlinks}>
-                {/* <Button color="inherit">AboutB</Button> */}
-                <Link href="Home" className={classes.navlinks} color="inherit">Home </Link>
-              </Typography>
-              <Typography variant="h6" className={classes.navlinks}>
-                {/* <Button color="inherit">AboutB</Button> */}
-                <Link href="About" className={classes.navlinks} color="inherit">About</Link>
-              </Typography>
-              {/* This is another way that works too
-              <Link href="About" className={classes.menuButton} color="inherit">
-                <Typography variant="h6" className={classes.menuButton}>
-                  About-LT
+            {/* Nav Links */}
+            <Box sx={{ display: "flex" }}>
+
+              <MenuItem>
+                <Typography variant="h6" textAlign="center">
+                  <Link href="Home" color="inherit" underline="none">Home </Link>
                 </Typography>
-              </Link> */}
-              <Typography variant="h6" className={classes.menuButton}>
-                <Link href="Contacts" className={classes.menuButton} color="inherit">Contact</Link>
-              </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography variant="h6" textAlign="center">
+                  <Link href="About" color="inherit" underline="none">About</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography variant="h6" textAlign="center">
+                  <Link href="Contacts" color="inherit" underline="none">Contact</Link>
+                </Typography>
+              </MenuItem>
+              {/* <Typography variant="h6" className={classes.menuButton}>{page}</Typography> */}
+
             </Box>
 
             {/* Button Link */}
             <Box>
-              <Button variant='contained' disableElevation component={Link} to={'contacts'}>End</Button>
+              {/* <Button variant='contained' disableElevation component={Link} to={'contacts'}>End</Button> */}
             </Box>
 
           </Box>
 
-
-          {/* This will step through and create the meues */}
+          {/* Nav Links */}
           {/* <Box sx={{ display: "flex" }}>
-            {navList.map((obj) => (
-              <>
-                <Typography variant="h6" className={classes.menuButton}>{obj}</Typography>
-              </>
-            ))}
-          </Box> */}
-
-
+              {navList.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu(page)}>
+                  <Typography variant="h6" textAlign="center">{page}</Typography>
+                </MenuItem>
+                // <Typography variant="h6" className={classes.menuButton}>{page}</Typography>
+              ))}
+            </Box> */}
 
           {/* <Button color="inherit">Login</Button> */}
 
         </Toolbar>
       </AppBar>
 
-    </div>
+    </div >
   );
 }
